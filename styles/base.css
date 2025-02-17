@@ -13,7 +13,7 @@ html{
 
 body{
     min-height: 100vh;
-    background-image: url("/assets/webpage/5176963217514147627.jpg");
+    background-image: url("../assets/webpage/5176963217514147627.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
