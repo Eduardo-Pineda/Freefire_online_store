@@ -1,0 +1,18 @@
+@media screen and (min-width: 1080px) {
+    /* ============================BODY'S ASIDE SECTION===========================*/
+    .body-container__aside--test .aside__left{
+        max-width: 55px;
+    }
+    .left__btn:nth-child(1),
+    .left__btn:nth-child(2){
+        background-size: 75%;
+    }
+    .aside__right a {
+        font-size: 1.3rem;
+    }
+
+    /* ===============================POP-UP SECTION==============================*/
+    .content p{
+        margin-top: 12px;
+    }
+  }
