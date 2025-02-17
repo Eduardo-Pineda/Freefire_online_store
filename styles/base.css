@@ -106,7 +106,7 @@ body{
 }
 
 .left__btn:nth-child(1){
-    background-image: url("/assets/webpage/icon_toggle_1.png");
+    background-image: url("../assets/webpage/icon_toggle_1.png");
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: center;
@@ -114,7 +114,7 @@ body{
 }
 
 .left__btn:nth-child(2){
-    background-image: url("/assets/webpage/icon_toggle_1.png");
+    background-image: url("../assets/webpage/icon_toggle_1.png");
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: center;
@@ -146,21 +146,21 @@ body{
 }
 
 #male{
-    background-image: url("/assets/webpage/male_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
+    background-image: url("../assets/webpage/male_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
 }
 
 #female{
-    background-image: url("/assets/webpage/female_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
+    background-image: url("../assets/webpage/female_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
 }
 
 #weapon{
-    background-image: url("/assets/webpage/swords_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
+    background-image: url("../assets/webpage/swords_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
@@ -256,14 +256,14 @@ section .search-bar{
 }
 
 .search-items-2 #closeSearchBtn{
-    background-image: url('/assets/webpage/cross_vector.svg');
+    background-image: url('../assets/webpage/cross_vector.svg');
     background-repeat: no-repeat;
     background-size: 90% 90%;
     background-position: center;
 }
 
 .search-items-2 #searchBtn{
-    background-image: url('/assets/webpage/search_vector.svg');
+    background-image: url('../assets/webpage/search_vector.svg');
     background-repeat: no-repeat;
     background-size: 90% 90%;
     background-position: center;
@@ -345,7 +345,7 @@ section .search-bar{
 }
 
 #cartBtn{
-    background-image: url(/assets/webpage/cart_icon.jpg);
+    background-image: url("../assets/webpage/cart_icon.jpg");
     background-color: #3f3d3e;
     background-repeat: no-repeat;
     background-size: 15px;
@@ -359,7 +359,7 @@ section .search-bar{
 }
 
 #giftBtn{
-    background-image: url(/assets/webpage/gift_icon.jpg);
+    background-image: url("../assets/webpage/gift_icon.jpg");
     background-color: #fabe08;
     background-repeat: no-repeat;
     background-size: 15px;
@@ -381,7 +381,7 @@ section .search-bar{
 
 .buy-items .item:nth-child(1){
     background-color: red;
-    background-image: url(/assets/webpage/shopping_cart_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg);
+    background-image: url("../assets/webpage/shopping_cart_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 15px 15px;
@@ -393,7 +393,7 @@ section .search-bar{
     align-items: center;
     height: 47%;
     width: 54%;
-    background-image: url(/assets/webpage/4992341613049130636.jpg);
+    background-image: url("../assets/webpage/4992341613049130636.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -488,7 +488,7 @@ section .search-bar{
     /* height: 40px; */
     width: 17.1%;
     margin: 10px 0;
-    background-image: url(/assets/webpage/popup_logo_1.png);
+    background-image: url("../assets/webpage/popup_logo_1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
