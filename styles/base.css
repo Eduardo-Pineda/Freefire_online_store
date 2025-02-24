@@ -223,7 +223,7 @@ section .search-bar{
 }
 
 .search-items-1 .item:nth-child(1){
-    background-image: url(/assets/webpage/Rectangle_31.svg);
+    background-image: url("../assets/webpage/Rectangle_31.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -231,7 +231,7 @@ section .search-bar{
 }
 
 .search-items-1 .item:nth-child(2){
-    background-image: url(/assets/webpage/Group_2.svg);
+    background-image: url("../assets/webpage/Group_2.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
