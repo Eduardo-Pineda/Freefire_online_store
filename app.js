@@ -14,10 +14,19 @@ currentGame.itemGenerator(itemsContainer, undefined, [["item--normal-size"], []]
 
 aside.addEventListener('click', e =>{
     e.preventDefault();
+
+    if(e.target.classList.contains('left__btn--selected-logo')){
+        e.target.classList.replace("left__btn--selected-logo", "left__btn--logo");
+    }
+    else{
+        e.target.classList.replace("left__btn--logo", "left__btn--selected-logo");
+    }
+
     
     if(e.target.classList.contains('left__btn')){
         document.querySelector(".aside__right").classList.toggle("aside__right--hide");
     }
+    
     if(e.target.tagName == "A"){
         Array.from(document.querySelector(".aside__right").children).map(x =>{
             if(x.classList.contains("right__text--selected")){

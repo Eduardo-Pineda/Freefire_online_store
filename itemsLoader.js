@@ -40,93 +40,96 @@ export class itemsLoader {
         }
     }
 
+  
     togglingCharacters(gender, itemsContainer) {
-        const items = Array.from(itemsContainer.children);
-        let characters = [];
-
         switch (gender) {
             case 'veteranPassBtn':
-
-                characters = this.object.characters().veteranPass;
-                itemsContainer.classList.remove('items-container--bigger-fixed');
-                adjustingImage(false, characters, this.itemGenerator);
-                setImage(false, characters);
+                setItem(this.object.characters().veteranPass, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().veteranPass, false);
                 break;
                 
             case 'evolutionaryBtn':
-                characters = this.object.weapon();
-                itemsContainer.classList.add('items-container--bigger-fixed');
-                adjustingImage(true, characters, this.itemGenerator);
-                setImage(true, characters);
+                setItem(this.object.weapon(), itemsContainer, true, this.itemGenerator);
+                setImageURL(this.object.weapon(), true);
                 break;
 
-
-
             case 'criminalsBtn':
-                characters = this.object.characters().criminals;
-                itemsContainer.classList.remove('items-container--bigger-fixed');
-                adjustingImage(false, characters, this.itemGenerator);
-                setImage(false, characters);
+                setItem(this.object.characters().criminals, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().criminals, false);
                 break;
 
             case 'collabNarutoBtn':
-                characters = this.object.characters().collaboration;
-                itemsContainer.classList.remove('items-container--bigger-fixed');
-                adjustingImage(false, characters, this.itemGenerator);
-                setImage(false, characters);
+                setItem(this.object.characters().collaboration, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().collaboration, false);
                 break;
 
             case 'skinBtn':
-                characters = this.object.characters().skins;
-                itemsContainer.classList.remove('items-container--bigger-fixed');
-                adjustingImage(false, characters, this.itemGenerator);
-                setImage(false, characters);
+                setItem(this.object.characters().skins, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().skins, false);
+                break;
+            
+            case 'skinBtn2':
+                setItem(this.object.characters().skin_2, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().skin_2, false);
+                break;
+
+            case 'skinBtn3':
+                setItem(this.object.characters().skin_3, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().skin_3, false);
                 break;
     
             case 'fistBtn':
-                characters = this.object.characters().fist;
-                itemsContainer.classList.remove('items-container--bigger-fixed');
-                adjustingImage(false, characters, this.itemGenerator);
-                setImage(false, characters);
+                setItem(this.object.characters().fist, itemsContainer, false, this.itemGenerator);
+                setImageURL(this.object.characters().fist, false);
                 break;
 
             default:
                 console.warn(`Género o tipo "${gender}" no reconocido.`);
+                console.log(gender)
                 return;
         }
 
+        Array.from(document.querySelector(".items-container").children).map(item => item.classList.remove('item--selected'));
 
-        function adjustingImage(isWeapon, character, cb){
-            if (items.length !== character.length) {
-                const difference = character.length - items.length;
-        
+        Array.from(itemsContainer.children).map(item => this.selectedItem.map(url =>{
+            if(item.src == url){
+                item.classList.add('item--selected');
+            }
+            
+        }))
+
+        function setItem(characters, container, isWeapon, cb){
+            const currentItems = Array.from(container.children);
+
+            // Validar si es un item de tipo arma
+            if(isWeapon == true){
+                container.classList.add('items-container--bigger-fixed');
+            }
+            else{
+                container.classList.remove('items-container--bigger-fixed');
+            }
+
+            if (currentItems.length !== characters.length){
+                const difference = characters.length - currentItems.length;
+                
                 if (difference < 0) {
                     for (let i = 0; i < Math.abs(difference); i++) {
-                        itemsContainer.removeChild(itemsContainer.lastElementChild);
+                        container.removeChild(container.lastElementChild);
                     }
                 }
                 else if(isWeapon){
-                    console.log(difference);
-                    itemsContainer.classList.add("items-container--bigger-fixed");
-                    cb(
-                        itemsContainer,
-                        difference,
-                        [["item--big-size"], ["item__video"]]
-                    );
+                    container.classList.add("items-container--bigger-fixed");
+                    cb(container, difference, [["item--big-size"], ["item__video"]]);
                 }
                 else {
                     itemsContainer.classList.remove("items-container--bigger-fixed");
-                    cb(
-                        itemsContainer,
-                        difference,
-                        [["item--normal-size"], ["item__video"]]
-                    );
+                    cb(itemsContainer, difference, [["item--normal-size"], ["item__video"]]);
                 }
+                
             }
         }
-    
-        //------------------------ Funcion para ajustar y agragar al contenedor los items que puedan hacer falta----------------------------
-        function setImage(isWeapon, character){
+
+        function setImageURL(character, isWeapon){
             Array.from(itemsContainer.children).forEach((item, index) => {
                 if (item.tagName === 'IMG') {
                     if(isWeapon){
@@ -147,20 +150,20 @@ export class itemsLoader {
             });
         }
     }
-
-    selectingItems(element, cb){
-
+        
+    selectingItems(item, playSound){
         // Condicion para determinar si algun item esta seleccionado, para que en caso contrario, este sea seleccionado
-        if(element.classList.contains('item--selected')){
-            element.classList.remove('item--selected');
-            this.selectedItem.pop(element.src);
+        if(item.tagName === 'IMG'){
+            if(!item.classList.contains('item--selected')){
+                item.classList.add('item--selected');
+                this.selectedItem.push(item.src);
+            }
+            else{
+                item.classList.remove('item--selected');
+                this.selectedItem.pop(item.src);
+            }
+            playSound()
         }
-        else{
-            element.classList.add('item--selected');
-            this.selectedItem.push(element.src);
-        }
-
-        cb()
     }
 
     createPopUp(){
@@ -203,12 +206,6 @@ export class itemsLoader {
                     videoGift.currentTime = 2.45;
                     videoGift.play();
                 }
-
-                // Condicion que activa el box-shadow
-                // if(videoGift.currentTime >= 0.060){
-                //     videoGift.classList.add('video--box-shadow');
-                // }
-
             });
 
             // Metodo que ejecuta la funcion result luego de 10 segundos
@@ -283,13 +280,14 @@ export class itemsLoader {
             const closeButton = document.createElement('button');
             closeButton.classList.add('close');
             closeButton.id = 'closeBtn';
-            closeButton.textContent = 'Ok';
+            closeButton.textContent = 'OK';
             
             // Añadir el boton fuera del contenedor de contenidos
             popup.appendChild(closeButton);
             
             //Funcion para cerrar el Pop-Up
-            skipAndClose();
+            
+            skipAndClose(null, null, null, selectedItems);
         }
         
         // ------------Funcion que permite cerrar y omitir partes del Pou-Up---------------------
@@ -306,10 +304,12 @@ export class itemsLoader {
                 if(!video){
                     if(e.target.id == 'popupContainer' || e.target.id == 'closeBtn'){
                         document.querySelector('main').removeChild(popupContainer);
-                        console.log(this.selectedItem);
+                        selectedItem.length = 0;
+                        Array.from(document.querySelector(".items-container").children).map(item => item.classList.remove('item--selected'));
                     }  
                 }
             })
         }
     }
+    
 }

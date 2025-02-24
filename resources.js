@@ -49,7 +49,7 @@ export class game {
                 "assets/media/characters/clown/clown_7.webp"
             ],
 
-            skins: [
+            fist: [
                 "assets/media/characters/dark/dark_10.webp",
                 "assets/media/characters/dark/dark_11.webp",
                 "assets/media/characters/dark/dark_12.webp",
@@ -76,13 +76,27 @@ export class game {
                 "assets/media/characters/dark/dark_9.webp"
             ],
 
-            fist: [
-                "assets/media/characters/cookie/cookie_1.webp",
-                "assets/media/characters/cookie/cookie_2.webp",
-                "assets/media/characters/cookie/cookie_3.webp",
-                "assets/media/characters/cookie/cookie_4.webp",
-                "assets/media/characters/cookie/cookie_5.webp"
-
+            skins: [
+                "assets/media/characters/cookie/skin_1.webp",
+                "assets/media/characters/cookie/skin_2.webp",
+                "assets/media/characters/cookie/skin_3.webp",
+                "assets/media/characters/cookie/skin_4.webp",
+                "assets/media/characters/cookie/skin_5.webp"
+            ],
+            skin_2: [
+                "assets/media/characters/cookie/skin_5.webp",
+                "assets/media/characters/cookie/skin_6.webp",
+                "assets/media/characters/cookie/skin_7.webp",
+                "assets/media/characters/cookie/skin_8.webp",
+                "assets/media/characters/cookie/skin_9.webp",
+                "assets/media/characters/cookie/skin_10.webp",],
+            skin_3: [
+                "assets/media/characters/cookie/skin_11.webp",
+                "assets/media/characters/cookie/skin_12.webp",
+                "assets/media/characters/cookie/skin_13.webp",
+                "assets/media/characters/cookie/skin_14.webp",
+                "assets/media/characters/cookie/skin_15.webp",
+                "assets/media/characters/cookie/skin_16.webp"
             ]
         };
     }

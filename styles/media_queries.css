@@ -1,18 +1,45 @@
 @media screen and (min-width: 1080px) {
+    /* ============================HEADER'S SECTION===========================*/
+    .store__header{
+        max-height: 41px;
+    }
+
+
+
     /* ============================BODY'S ASIDE SECTION===========================*/
     .body-container__aside--test .aside__left{
         max-width: 55px;
     }
     .left__btn:nth-child(1),
     .left__btn:nth-child(2){
-        background-size: 75%;
+        background-size: 65%;
     }
     .aside__right a {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    /* ======================================= */
+
+    section .search-bar{
+        min-height: 83.4125px;
+    }
+
+    /* =============================== */
+
+    .right .items-container{
+        height: 72.2%;
+        max-height: 465px;
     }
 
     /* ===============================POP-UP SECTION==============================*/
     .content p{
         margin-top: 12px;
+    }
+
+    /* ============================================================================== */
+
+    #cartBtn,
+    #giftBtn{
+        background-size: 20px;
     }
   }
